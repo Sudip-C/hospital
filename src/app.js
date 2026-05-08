@@ -3,6 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const authRoutes = require("./modules/auth/auth.routes");
+const doctorRoutes = require("./modules/doctor/doctor.routes");
 const app = express();
 
 app.use(cors());
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
   res.send("Hospital Management API Running...");
 });
 app.use("/api/auth", authRoutes);
-
+app.use("/api/doctors", doctorRoutes);
 
 
 module.exports = app;
