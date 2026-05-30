@@ -21,4 +21,4 @@ router.get(
   doctorController.getDoctors
 );
 
-module.exports = router;
+module.exports = router; 
