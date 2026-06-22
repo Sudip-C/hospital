@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const authRoutes = require("./modules/auth/auth.routes");
 const doctorRoutes = require("./modules/doctor/doctor.routes");
 const patientRoutes = require("./modules/patient/patient.route");
+const appointmentRoutes = require("./modules/appointment/appointment.routes.js");
 const errorMiddleware = require('./middlewares/error.middleware');
 const app = express();
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/doctors", doctorRoutes);
 app.use("/api/patients", patientRoutes);
+app.use("/api/appointments", appointmentRoutes);
 app.use(errorMiddleware)
 
 
